@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: rgba(34, 34, 34, 0.887);
+    color: #fcfcfc;
+    font-family: monospace;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* position: relative; */
+}
+
+h1 {
+    /* text-align: center; */
+    /* line-height: 100vh; */
+
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    width: 0;
+    font-size: 40px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-block: 20px;
+
+    border-right: 2px solid rgba(255, 250, 250, 0.813);
+}
+
+/* anim typewriter */
+.anim-typewriter {
+    animation: typewriter 2s steps(13) 2s forwards,
+    blinkTextCursor 0.5s infinite;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 13ch;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 250, 250, 0.813);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+ul li {
+    list-style-type: none;
+    text-align: center;
+    padding-block: 0.2em;
+    margin: 5px;
+    font-size: 18px;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+/* first hover animation */
+.one::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: snow;
+    display: block;
+
+    border-radius: 2px;
+    position: relative;
+    left: 50%;
+
+    transition: 0.4s ease;
+}
+
+.one:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/*! second hover animation */
+.two {
+    position: relative;
+}
+
+.two::before {
+    content: "";
+    display: block;
+
+    position: absolute;
+    top: 0;
+    right: -5px;
+    left: -5px;
+    bottom: 0;
+    z-index: -1;
+
+    background-color: rgba(173, 216, 230, 0.702);
+    border-radius: 2px;
+    box-shadow: inset -1px -1px 5px rgba(255, 250, 250, 0.61);
+
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.two:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* third animation */
+
+.three{
+    position: relative;
+    overflow: hidden;
+}
+
+.three::before,
+.three::after{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    
+
+}
+
+.three::after{
+    content: "Contact";
+    color: teal;
+
+    transform: translate(150%, 0);
+    transition: transform 0.3s cubic-bezier(.45,.03,1,.02)
+}
+
+.three:hover::after{
+    transform: translate(0, 0);
+}
+
+.three span{
+    transform: translateX(0);
+    transition: transform 0.3s cubic-bezier(.45,.03,1,.02);
+    display: inline-block;
+
+}
+
+.three:hover span{
+    transform: translate(150%)
+}
+
+
+
+.three::before{
+    content: "";
+    height: 2px;
+    bottom: 0;
+    background-color: rgb(25, 122, 122);
+
+    transform: scaleX(0);
+    transform-origin: 100%;
+    transition: transform 0.3s;
+}
+
+.three:hover::before{
+    transform-origin: 0%;
+    transform: scaleX(1);
+}
+
+h2:nth
